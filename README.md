@@ -14,7 +14,7 @@ The only requirement is that you have a running Spring Boot application. If you 
 
 ## How to configure Spring Boot profiles
 
-If not specified Spring Boot will start with a _default_ profile but you can this by passing a new profile (or profiles) upon starting the application with java
+If not specified Spring Boot will start with a _default_ profile but you can override this by passing a new profile (or profiles) upon starting the application with java
 
 ````bash
 java -jar target/spring-boot-profiles.jar --spring.profiles.active=local
@@ -23,8 +23,17 @@ or the Spring Boot maven plugin
 ````bash
 mvn spring-boot:run -Dspring-boot.run.profiles=local
 ````
-Spring Boot will also load the [application.properties](src/main/resources/application.properties) as the base configuration.
 
-I hope you found this example useful!
+By passing a profile (or profiles) we will tell Spring Boot to load an _application-{profile}.properties_ on top of the default [application.properties](src/main/resources/application.properties).
+This means that you can override properties as you see fit depending on the profile.
+
+For instance by running this example with the profile _local_ you will inherit the properties from [application.properties](src/main/resources/application.properties) and load the ones in [application-local.properties](src/main/resources/application-local.properties) (which overrides in case of duplication)
+
+- _server.servlet.context-path=/app_ -> is inherited from default
+- _profile.message=Hello from default profile!_ -> is overridden by local properties
+- _server.port=8081_ -> is applied by local
+- _profile.message=Hello from local profile!_ -> overrides the default
+
+- I hope you found this example useful!
 
 :coffee: May Java be with you!
