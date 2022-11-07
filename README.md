@@ -29,12 +29,7 @@ This means that you can override properties as you see fit depending on the prof
 
 For instance by running this example with the profile _local_ you will inherit the properties from [application.properties](src/main/resources/application.properties) and load the ones in [application-local.properties](src/main/resources/application-local.properties) (which overrides in case of duplication)
 
-- _server.servlet.context-path=/app_ -> is inherited from default
-- _profile.message=Hello from default profile!_ -> is overridden by local properties
-- _server.port=8081_ -> is applied by local
-- _profile.message=Hello from local profile!_ -> overrides the default and is applied by local
-
-You check this behaviour by running the application with the _local_ profile and browsing [localhost:8081/app/api/profile](http://localhost:8081/app/api/profile)
+You check this behaviour by running the application with the _local_ profile and browsing on port 8081 [localhost:8081/app/api/profile](http://localhost:8081/app/api/profile)
 
 And finally, you can also use profiles in a Spring Boot test such as [ProfileConfigurationTest.java](src/test/java/com/codewithhades/springboot/profiles/ProfileConfigurationTest.java) by using the annotation 
 ````java
