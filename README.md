@@ -34,6 +34,14 @@ For instance by running this example with the profile _local_ you will inherit t
 - _server.port=8081_ -> is applied by local
 - _profile.message=Hello from local profile!_ -> overrides the default
 
-- I hope you found this example useful!
+You check this behaviour by running the application with the _local_ profile and browsing [localhost:8081/app/api/profile](http://localhost:8081/app/api/profile)
+
+And finally, you can also use profiles in a Spring Boot test such as [ProfileConfigurationTest.java](src/test/java/com/codewithhades/springboot/profiles/ProfileConfigurationTest.java) by using the annotation 
+````java
+@ActiveProfiles("test")
+````
+which will attempt to load [application-test.properties](src/test/resources/application-test.properties) where you can override properties for tests as you see fit.
+
+I hope you found this example useful!
 
 :coffee: May Java be with you!
