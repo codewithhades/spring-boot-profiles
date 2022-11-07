@@ -32,7 +32,7 @@ For instance by running this example with the profile _local_ you will inherit t
 - _server.servlet.context-path=/app_ -> is inherited from default
 - _profile.message=Hello from default profile!_ -> is overridden by local properties
 - _server.port=8081_ -> is applied by local
-- _profile.message=Hello from local profile!_ -> overrides the default
+- _profile.message=Hello from local profile!_ -> overrides the default and is applied by local
 
 You check this behaviour by running the application with the _local_ profile and browsing [localhost:8081/app/api/profile](http://localhost:8081/app/api/profile)
 
