@@ -37,6 +37,8 @@ And finally, you can also use profiles in a Spring Boot test such as [ProfileCon
 ````
 which will attempt to load [application-test.properties](src/test/resources/application-test.properties) where you can override properties for tests as you see fit.
 
-I hope you found this example useful!
+## And before you go...
+
+:pray: I hope you find this example useful and if you want to support me in my mission to help our fellow Java developers please consider sponsoring this space!
 
 :coffee: May Java be with you!
